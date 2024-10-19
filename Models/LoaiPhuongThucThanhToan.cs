@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookWebsite.Models
 {
@@ -15,9 +17,10 @@ namespace BookWebsite.Models
         public string TenPhuongThucThanhToan { get; set; }
 
         [DisplayName("Khuyến mãi")]
-        [Range(0, 100, ErrorMessage = @"{0}phải nằm trong khoảng từ 0 đến 1000.")]
+        [Range(0, 100, ErrorMessage = @"{0}phải nằm trong khoảng từ 0 đến 100.")]
+        [Column(TypeName = "decimal(18,2)")]
         [Required(ErrorMessage = @"{0} không được để trống.")]
-        public int KhuyenMai { get; set; }
+        public decimal KhuyenMai { get; set; }
 
 
         // navigation properties

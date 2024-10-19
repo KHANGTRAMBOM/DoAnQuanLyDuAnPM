@@ -5,7 +5,7 @@
 namespace BookWebsite.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDatabase : Migration
+    public partial class CapNhatDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -121,6 +121,14 @@ namespace BookWebsite.Data.Migrations
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "RoleClaims",
                 newName: "IX_RoleClaims_RoleId");
+
+            migrationBuilder.AlterColumn<decimal>(
+                name: "KhuyenMai",
+                table: "LoaiPhuongThucThanhToan",
+                type: "decimal(18,2)",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldType: "int");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_UserTokens",
@@ -344,6 +352,14 @@ namespace BookWebsite.Data.Migrations
                 name: "IX_RoleClaims_RoleId",
                 table: "AspNetRoleClaims",
                 newName: "IX_AspNetRoleClaims_RoleId");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "KhuyenMai",
+                table: "LoaiPhuongThucThanhToan",
+                type: "int",
+                nullable: false,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(18,2)");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_AspNetUserTokens",

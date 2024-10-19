@@ -63,8 +63,5 @@ namespace BookWebsite.Data
         public DbSet<BookWebsite.Models.LoaiPhuongThucThanhToan> LoaiPhuongThucThanhToan { get; set; } = default!;
         public DbSet<BookWebsite.Models.ThanhToan> ThanhToan { get; set; } = default!;
 
-      
-
-
     }
 }

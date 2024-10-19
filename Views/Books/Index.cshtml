@@ -36,7 +36,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.TheLoai)
             </th>
-            <th></th>
+            <th>
+                Function
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -57,8 +59,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NamXB)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UrlAnh)
+            <td >
+                    <img src="@item.UrlAnh" width="200" class="img-thumbnail" alt="Book Image" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MoTa)

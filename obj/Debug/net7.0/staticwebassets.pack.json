@@ -5,6 +5,94 @@
       "PackagePath": "staticwebassets\\BookWebsite.bundle.scp.css"
     },
     {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\7ThoiQuenHieuQua\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\7ThoiQuenHieuQua\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DacNhanTam\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\DacNhanTam\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DanhThucConNguoiPhiThuong\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\DanhThucConNguoiPhiThuong\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DestinationB1\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\DestinationB1\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DestinationB2\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\DestinationB2\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\GiaoKhoa10\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\GiaoKhoa10\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\GiaoKhoa11\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\GiaoKhoa11\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\GiaoKhoa12\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\GiaoKhoa12\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\HarryPotter1\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\HarryPotter1\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\HarryPotter2\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\HarryPotter2\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\HocCachLacQuan\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\HocCachLacQuan\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\KinhTeHocViMo\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\KinhTeHocViMo\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\LichSuLoaiNguoi\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\LichSuLoaiNguoi\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\LichSuVanMinh\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\LichSuVanMinh\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\MonNhat\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\MonNhat\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\MonViet\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\MonViet\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\Naruto72\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\Naruto72\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\NhaGiaKim\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\NhaGiaKim\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\NoiKhuRung\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\NoiKhuRung\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\OnePiece100\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\OnePiece100\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\TramNamCoDon\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\TramNamCoDon\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\VuTruTrongLongBanTay\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\VuTruTrongLongBanTay\\1.jpg"
+    },
+    {
       "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

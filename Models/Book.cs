@@ -48,6 +48,7 @@ namespace BookWebsite.Models
         // URL ảnh
         [Required(ErrorMessage = "URL ảnh không được để trống.")]
         [Url(ErrorMessage = "Địa chỉ URL không hợp lệ.")]
+        [DisplayName("Ảnh")]
         public string UrlAnh { get; set; }
 
         // Mô tả 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookWebsite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241018051247_Create-Database")]
-    partial class CreateDatabase
+    [Migration("20241019062609_Update-Seeddata-4")]
+    partial class UpdateSeeddata4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -218,8 +218,8 @@ namespace BookWebsite.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("KhuyenMai")
-                        .HasColumnType("int");
+                    b.Property<decimal>("KhuyenMai")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TenPhuongThucThanhToan")
                         .IsRequired()

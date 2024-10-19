@@ -215,8 +215,8 @@ namespace BookWebsite.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("KhuyenMai")
-                        .HasColumnType("int");
+                    b.Property<decimal>("KhuyenMai")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TenPhuongThucThanhToan")
                         .IsRequired()
