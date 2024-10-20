@@ -10,48 +10,49 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="TenSach" class="control-label"></label>
                 <input asp-for="TenSach" class="form-control" />
                 <span asp-validation-for="TenSach" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="TacGia" class="control-label"></label>
                 <input asp-for="TacGia" class="form-control" />
                 <span asp-validation-for="TacGia" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Gia" class="control-label"></label>
                 <input asp-for="Gia" class="form-control" />
                 <span asp-validation-for="Gia" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="NXB" class="control-label"></label>
                 <input asp-for="NXB" class="form-control" />
                 <span asp-validation-for="NXB" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="NamXB" class="control-label"></label>
-                <input asp-for="NamXB" class="form-control" />
+                <input asp-for="NamXB" class="form-control" type="date" />
                 <span asp-validation-for="NamXB" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="UrlAnh" class="control-label"></label>
-                <input asp-for="UrlAnh" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="UrlAnh" class="control-label font-weight-bold">Ảnh</label>
+                <input type="file"  name="FileAnh" class="form-control"/>
+                <input asp-for="UrlAnh" class="form-control" style="display: none" value="a"/>
                 <span asp-validation-for="UrlAnh" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="MoTa" class="control-label"></label>
                 <input asp-for="MoTa" class="form-control" />
                 <span asp-validation-for="MoTa" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="TheLoaiId" class="control-label"></label>
                 <select asp-for="TheLoaiId" class ="form-control" asp-items="ViewBag.TheLoaiId"></select>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -65,3 +66,20 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+
+<script>
+    document.getElementById('FileAnh').addEventListener('change', function (event) {
+        var fileInput = document.getElementById('FileAnh');
+        var urlAnhInput = document.getElementById('UrlAnh');
+        // Kiểm tra xem có file nào được chọn không
+        if (fileInput.files.length > 0) {
+            // Lấy tên file và gán vào input UrlAnh
+            urlAnhInput.value = fileInput.files[0].name;
+        } else {
+            // Nếu không có file nào được chọn, gán giá trị rỗng
+            urlAnhInput.value = '';
+        }
+    });
+</script>

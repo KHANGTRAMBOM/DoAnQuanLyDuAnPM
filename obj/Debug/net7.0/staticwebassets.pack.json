@@ -1,335 +1,359 @@
 {
   "Files": [
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BookWebsite.bundle.scp.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BookWebsite.bundle.scp.css",
       "PackagePath": "staticwebassets\\BookWebsite.bundle.scp.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\7ThoiQuenHieuQua\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\1.jpg",
+      "PackagePath": "staticwebassets\\Image\\1.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\1212.png",
+      "PackagePath": "staticwebassets\\Image\\1212.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\29cafa1a29379069c926.jpg",
+      "PackagePath": "staticwebassets\\Image\\29cafa1a29379069c926.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\7ThoiQuenHieuQua\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\7ThoiQuenHieuQua\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DacNhanTam\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\DacNhanTam\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\DacNhanTam\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DanhThucConNguoiPhiThuong\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\DanhThucConNguoiPhiThuong\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\DanhThucConNguoiPhiThuong\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DestinationB1\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\DestinationB1\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\DestinationB1\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\DestinationB2\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\DestinationB2\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\DestinationB2\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\GiaoKhoa10\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\GiaoKhoa10\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\GiaoKhoa10\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\GiaoKhoa11\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\GiaoKhoa11\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\GiaoKhoa11\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\GiaoKhoa12\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\GiaoKhoa12\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\GiaoKhoa12\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\HarryPotter1\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\HarryPotter1\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\HarryPotter1\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\HarryPotter2\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\HarryPotter2\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\HarryPotter2\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\HocCachLacQuan\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\HocCachLacQuan\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\HocCachLacQuan\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\KinhTeHocViMo\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\KinhTeHocViMo\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\KinhTeHocViMo\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\LichSuLoaiNguoi\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\LichSuLoaiNguoi\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\LichSuLoaiNguoi\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\LichSuVanMinh\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\LichSuVanMinh\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\LichSuVanMinh\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\MonNhat\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\MonNhat\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\MonNhat\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\MonViet\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\MonViet\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\MonViet\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\Naruto72\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\Naruto72\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\Naruto72\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\NhaGiaKim\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\NhaGiaKim\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\NhaGiaKim\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\NoiKhuRung\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\NoiKhuRung\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\NoiKhuRung\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\OnePiece100\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\OnePiece100\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\OnePiece100\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\TramNamCoDon\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\TramNamCoDon\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\TramNamCoDon\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\Image\\VuTruTrongLongBanTay\\1.jpg",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\VuTruTrongLongBanTay\\1.jpg",
       "PackagePath": "staticwebassets\\Image\\VuTruTrongLongBanTay\\1.jpg"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\css\\site.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\abc.png",
+      "PackagePath": "staticwebassets\\Image\\abc.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\bacb0a4cac61153f4c70.jpg",
+      "PackagePath": "staticwebassets\\Image\\bacb0a4cac61153f4c70.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\dddddddd.jpg",
+      "PackagePath": "staticwebassets\\Image\\dddddddd.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\favicon.ico",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\js\\site.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

@@ -504,7 +504,7 @@ namespace BookWebsite.Data.Migrations
             modelBuilder.Entity("BookWebsite.Models.Book", b =>
                 {
                     b.HasOne("BookWebsite.Models.TheLoai", "TheLoai")
-                        .WithMany("Books")
+                        .WithMany()
                         .HasForeignKey("TheLoaiId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -515,13 +515,13 @@ namespace BookWebsite.Data.Migrations
             modelBuilder.Entity("BookWebsite.Models.ChiTietDonHang", b =>
                 {
                     b.HasOne("BookWebsite.Models.Book", "Book")
-                        .WithMany("ChiTietDonHangs")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BookWebsite.Models.DonHang", "DonHang")
-                        .WithMany("ChiTietDonHangs")
+                        .WithMany()
                         .HasForeignKey("IDDonHang")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -534,13 +534,13 @@ namespace BookWebsite.Data.Migrations
             modelBuilder.Entity("BookWebsite.Models.DanhGia", b =>
                 {
                     b.HasOne("BookWebsite.Models.Book", "Book")
-                        .WithMany("DanhGias")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BookWebsite.Models.NguoiDung", "NguoiDung")
-                        .WithMany("DanhGias")
+                        .WithMany()
                         .HasForeignKey("IDNguoiDung")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -553,7 +553,7 @@ namespace BookWebsite.Data.Migrations
             modelBuilder.Entity("BookWebsite.Models.DonHang", b =>
                 {
                     b.HasOne("BookWebsite.Models.NguoiDung", "NguoiDung")
-                        .WithMany("DonHangs")
+                        .WithMany()
                         .HasForeignKey("IdUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -564,7 +564,7 @@ namespace BookWebsite.Data.Migrations
             modelBuilder.Entity("BookWebsite.Models.GioHang", b =>
                 {
                     b.HasOne("BookWebsite.Models.NguoiDung", "NguoiDung")
-                        .WithMany("GioHangs")
+                        .WithMany()
                         .HasForeignKey("IDNguoiDung")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -575,13 +575,13 @@ namespace BookWebsite.Data.Migrations
             modelBuilder.Entity("BookWebsite.Models.GioHangItem", b =>
                 {
                     b.HasOne("BookWebsite.Models.Book", "Book")
-                        .WithMany("GioHangItems")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BookWebsite.Models.GioHang", "GioHang")
-                        .WithMany("GioHangItems")
+                        .WithMany()
                         .HasForeignKey("GioHangId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -600,7 +600,7 @@ namespace BookWebsite.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("BookWebsite.Models.LoaiPhuongThucThanhToan", "LoaiPhuongThucThanhToan")
-                        .WithMany("thanhToans")
+                        .WithMany()
                         .HasForeignKey("PhuongThucThanhToanId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -659,44 +659,6 @@ namespace BookWebsite.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("BookWebsite.Models.Book", b =>
-                {
-                    b.Navigation("ChiTietDonHangs");
-
-                    b.Navigation("DanhGias");
-
-                    b.Navigation("GioHangItems");
-                });
-
-            modelBuilder.Entity("BookWebsite.Models.DonHang", b =>
-                {
-                    b.Navigation("ChiTietDonHangs");
-                });
-
-            modelBuilder.Entity("BookWebsite.Models.GioHang", b =>
-                {
-                    b.Navigation("GioHangItems");
-                });
-
-            modelBuilder.Entity("BookWebsite.Models.LoaiPhuongThucThanhToan", b =>
-                {
-                    b.Navigation("thanhToans");
-                });
-
-            modelBuilder.Entity("BookWebsite.Models.TheLoai", b =>
-                {
-                    b.Navigation("Books");
-                });
-
-            modelBuilder.Entity("BookWebsite.Models.NguoiDung", b =>
-                {
-                    b.Navigation("DanhGias");
-
-                    b.Navigation("DonHangs");
-
-                    b.Navigation("GioHangs");
                 });
 #pragma warning restore 612, 618
         }

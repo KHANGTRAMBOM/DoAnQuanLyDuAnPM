@@ -14,12 +14,5 @@ namespace BookWebsite.Models
         [DisplayName("Họ tên người dùng")]
         public string HoTen{ get; set; }  // Họ tên người dùng
 
-
-        //Navigation properties
-        public ICollection<DonHang> DonHangs { get; set; }
-
-        public ICollection<GioHang> GioHangs { get; set; }
-
-        public ICollection<DanhGia> DanhGias { get; set; }
     }
 }

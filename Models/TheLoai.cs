@@ -15,7 +15,5 @@ namespace BookWebsite.Models
         [DisplayName("Thể loại")]
         public string TenTheLoai { get; set; }
 
-        // Navigation property
-        public ICollection<Book> Books { get; set; }
     }
 }

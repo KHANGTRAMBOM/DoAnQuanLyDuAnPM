@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IGpeV8yOZN1D+0lofn3uMDTdkn2sjzuYW/X+XI+JDBxySGEncLRYGNEt4gsmpZR4kUbFUNluzqZ0kp+C0h/YTw==",
+  "dgSpecHash": "7EvkH8d8eFOSTxhH7IEQC3l5ku9MZHJSvX+LhT10TZFyLR34Va8V5TFfpW3D148nlrSgqjufeIgNgG6VFMtp6Q==",
   "success": true,
-  "projectFilePath": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\BookWebsite.csproj",
+  "projectFilePath": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\BookWebsite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

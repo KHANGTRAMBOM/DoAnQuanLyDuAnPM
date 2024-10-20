@@ -26,9 +26,9 @@ namespace BookWebsite.Models
 
                 ClearDatabaseAsync(context);
 
-                SeedTheLoai(context);
+     /*           SeedTheLoai(context);
                 SeedBooks(context);
-                SeedLoaiPhuongThucThanhToan(context);
+                SeedLoaiPhuongThucThanhToan(context);*/
 
                 logger.LogInformation("Seeding Completed");
       

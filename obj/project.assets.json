@@ -11743,11 +11743,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\BookWebsite.csproj",
+      "projectUniqueName": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\BookWebsite.csproj",
       "projectName": "BookWebsite",
-      "projectPath": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\BookWebsite.csproj",
+      "projectPath": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\BookWebsite.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\BookWebsite\\obj\\",
+      "outputPath": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

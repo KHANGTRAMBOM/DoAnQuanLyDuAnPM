@@ -13,10 +13,12 @@ namespace BookWebsite.Controllers
     public class LoaiPhuongThucThanhToansController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<LoaiPhuongThucThanhToansController> _logger;
 
-        public LoaiPhuongThucThanhToansController(ApplicationDbContext context)
+        public LoaiPhuongThucThanhToansController(ApplicationDbContext context, ILogger<LoaiPhuongThucThanhToansController> logger )
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: LoaiPhuongThucThanhToans
@@ -60,7 +62,10 @@ namespace BookWebsite.Controllers
         {
             if (ModelState.IsValid)
             {
+                var a = loaiPhuongThucThanhToan.KhuyenMai;
+                _logger.LogError($"{a}");
                 _context.Add(loaiPhuongThucThanhToan);
+                TempData["CreateStatus"] = true;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -97,9 +102,11 @@ namespace BookWebsite.Controllers
 
             if (ModelState.IsValid)
             {
+
                 try
                 {
                     _context.Update(loaiPhuongThucThanhToan);
+                    TempData["EditStatus"] = true;
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -150,7 +157,8 @@ namespace BookWebsite.Controllers
             {
                 _context.LoaiPhuongThucThanhToan.Remove(loaiPhuongThucThanhToan);
             }
-            
+
+            TempData["DeleteStatus"] = true;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

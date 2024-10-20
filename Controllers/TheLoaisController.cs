@@ -61,6 +61,7 @@ namespace BookWebsite.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(theLoai);
+                TempData["CreateStatus"] = true;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -99,6 +100,7 @@ namespace BookWebsite.Controllers
             {
                 try
                 {
+                    TempData["EditStatus"] = true;
                     _context.Update(theLoai);
                     await _context.SaveChangesAsync();
                 }
@@ -150,7 +152,8 @@ namespace BookWebsite.Controllers
             {
                 _context.TheLoai.Remove(theLoai);
             }
-            
+
+            TempData["DeleteStatus"] = true;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

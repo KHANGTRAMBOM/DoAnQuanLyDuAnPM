@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 
 namespace BookWebsite.Controllers
 {
     public class BooksController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<BooksController> _logger;
 
-        public BooksController(ApplicationDbContext context)
+
+        //[BindProperty] public IFormFile FileAnh { get; set; }
+        public BooksController(ApplicationDbContext context, ILogger<BooksController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Books
@@ -57,13 +62,38 @@ namespace BookWebsite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TenSach,TacGia,Gia,NXB,NamXB,UrlAnh,MoTa,TheLoaiId")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,TenSach,TacGia,Gia,NXB,NamXB,UrlAnh,MoTa,TheLoaiId")] Book book,IFormFile FileAnh)
         {
+
+            TempData["CreateStatus"] = null;
+            if (FileAnh != null && FileAnh.Length > 0)
+            {
+                // Đường dẫn lưu file
+                var filePath = Path.Combine("wwwroot/Image/", FileAnh.FileName);
+
+                // Lưu file vào thư mục trên server
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await FileAnh.CopyToAsync(stream);
+                }
+                book.UrlAnh = "Image/" + FileAnh.FileName;
+            }
+          
             if (ModelState.IsValid)
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
+                TempData["CreateStatus"] = true;
                 return RedirectToAction(nameof(Index));
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                foreach (var error in errors)
+                {
+                    _logger.LogError(error);
+                }
             }
             ViewData["TheLoaiId"] = new SelectList(_context.Set<TheLoai>(), "Id", "TenTheLoai", book.TheLoaiId);
             return View(book);
@@ -91,12 +121,46 @@ namespace BookWebsite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenSach,TacGia,Gia,NXB,NamXB,UrlAnh,MoTa,TheLoaiId")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TenSach,TacGia,Gia,NXB,NamXB,UrlAnh,MoTa,TheLoaiId")] Book book,IFormFile FileAnh)
         {
             if (id != book.Id)
             {
                 return NotFound();
             }
+
+            TempData["EditStatus"] = null;
+
+            /*        _logger.LogWarning($"ID: {book.Id}");
+        _logger.LogWarning($"TenSach: {book.TenSach}");
+        _logger.LogWarning($"Tacgia: {book.TacGia}");
+        _logger.LogWarning($"Gia: {book.Gia}");
+        _logger.LogWarning($"NXB: {book.NXB}");
+        _logger.LogWarning($"Namxb: {book.NamXB}");
+        _logger.LogWarning($"UrlAnh: {book.UrlAnh}");
+        _logger.LogWarning($"Mota: {book.MoTa}");
+        _logger.LogWarning($"TheLoaiID: {book.TheLoaiId}");
+        _logger.LogWarning($"FileAnh: {FileAnh.FileName}");*/
+
+
+
+
+            if (FileAnh != null && FileAnh.Length > 0)
+            {
+                // Đường dẫn lưu file
+                var filePath = Path.Combine("wwwroot/Image/", FileAnh.FileName);
+
+                // Lưu file vào thư mục trên server
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await FileAnh.CopyToAsync(stream);
+                }
+
+                // Gán đường dẫn tương đối của ảnh vào thuộc tính UrlAnh
+                book.UrlAnh = "Image/" + FileAnh.FileName;
+             
+            }
+
+
 
             if (ModelState.IsValid)
             {
@@ -104,20 +168,24 @@ namespace BookWebsite.Controllers
                 {
                     _context.Update(book);
                     await _context.SaveChangesAsync();
+                    TempData["EditStatus"] = true;
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!BookExists(book.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    _logger.LogError("Có lỗi xảy ra khi chỉnh sửa: " + ex.Message);
                 }
-                return RedirectToAction(nameof(Index));
             }
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                foreach (var error in errors)
+                {
+                    _logger.LogError(error);
+                }
+            }
+
             ViewData["TheLoaiId"] = new SelectList(_context.Set<TheLoai>(), "Id", "TenTheLoai", book.TheLoaiId);
             return View(book);
         }
@@ -155,7 +223,8 @@ namespace BookWebsite.Controllers
             {
                 _context.Book.Remove(book);
             }
-            
+
+            TempData["DeleteStatus"] = true;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

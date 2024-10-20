@@ -29,6 +29,6 @@ namespace BookWebsite.Models
 
         //Navigation Properties
         public NguoiDung NguoiDung { get; set; }
-        public ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
+
     }
 }

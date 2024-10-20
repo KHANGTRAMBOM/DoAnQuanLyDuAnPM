@@ -23,8 +23,5 @@ namespace BookWebsite.Models
         public decimal KhuyenMai { get; set; }
 
 
-        // navigation properties
-
-        public ICollection<ThanhToan> thanhToans { get; set; }
     }
 }

@@ -9,6 +9,30 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+
+@if (TempData["EditStatus"] != null)
+{
+    <div class="alert alert-success" id="successMessage">
+        Cập nhật thành công
+    </div>
+}
+
+@if (TempData["CreateStatus"] != null)
+{
+    <div class="alert alert-success" id="successMessage">
+        Thêm mới thành công
+    </div>
+}
+
+@if (TempData["DeleteStatus"] != null)
+{
+    <div class="alert alert-success" id="successMessage">
+        Xóa thành công
+    </div>
+}
+
+
 <table class="table">
     <thead>
         <tr>
@@ -33,3 +57,14 @@
 }
     </tbody>
 </table>
+
+
+<script>
+    // Chờ một vài giây (5000 ms = 5 giây) trước khi ẩn thông báo
+    setTimeout(function () {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.style.display = 'none'; // Ẩn thông báo
+        }
+    }, 2000);
+</script>

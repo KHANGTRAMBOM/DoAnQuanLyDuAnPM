@@ -22,7 +22,7 @@ namespace BookWebsite.Models
 
         // Navigation property
         public NguoiDung NguoiDung { get; set; }
-        public ICollection<GioHangItem> GioHangItems { get; set; } = new List<GioHangItem>();
+ 
     }
 
 }
