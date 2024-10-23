@@ -7,22 +7,35 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookWebsite.Controllers
 {
+    [Authorize(Roles = "Admin,Member")]
     public class GioHangItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<GioHangItemsController> _logger;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public GioHangItemsController(ApplicationDbContext context)
+        public GioHangItemsController(ApplicationDbContext context,ILogger<GioHangItemsController> logger , UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _logger = logger;
+            _userManager = userManager;
         }
+        
 
         // GET: GioHangItems
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.GioHangItem.Include(g => g.Book).Include(g => g.GioHang);
+            var applicationDbContext = _context.GioHangItem
+                .Include(g => g.Book)
+                .Include(g => g.GioHang);
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -38,6 +51,7 @@ namespace BookWebsite.Controllers
                 .Include(g => g.Book)
                 .Include(g => g.GioHang)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (gioHangItem == null)
             {
                 return NotFound();
@@ -49,8 +63,45 @@ namespace BookWebsite.Controllers
         // GET: GioHangItems/Create
         public IActionResult Create()
         {
-            ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB");
+            ViewData["BookId"] = new SelectList(_context.Book, "Id", "TenSach");
             ViewData["GioHangId"] = new SelectList(_context.GioHang, "Id", "IDNguoiDung");
+            return View();
+        }
+
+
+        // GET: GioHangItems/Create
+        public IActionResult Create2(int BookId,string Usermail)
+        {
+            // Lấy người dùng dựa trên email
+
+            var user = _context.Users.FirstOrDefault(model => model.Email == Usermail);
+
+            if (user == null)
+            {
+                // Xử lý trường hợp không tìm thấy người dùng
+                _logger.LogError("User null: " + Usermail);
+                return NotFound(); // Hoặc chuyển hướng đến trang lỗi
+            }
+
+            // Lấy ID của người dùng
+            var userId = user.Id; // Giả sử đây là kiểu int
+
+            // Kiểm tra giá trị userId trước khi sử dụng
+            if (userId == null)
+            {
+                // Xử lý trường hợp không tìm thấy ID
+                _logger.LogError("UseId null");
+                return NotFound(); // Hoặc chuyển hướng đến trang lỗi
+            }
+
+            // Tìm giỏ hàng dựa trên ID người dùng
+            ViewData["GioHangId"] = _context.GioHang
+                                            .FirstOrDefault(model => model.IDNguoiDung == userId);
+
+            // Lấy sách đã chọn
+            ViewData["SelectedBook"] = _context.Book
+                                                .FirstOrDefault(model => model.Id == BookId);
+
             return View();
         }
 
@@ -63,11 +114,39 @@ namespace BookWebsite.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Thêm GioHangItem vào cơ sở dữ liệu
                 _context.Add(gioHangItem);
-                await _context.SaveChangesAsync();
+
+                // Lấy đối tượng GioHang tương ứng với GioHangId từ GioHangItem
+                var gioHang = await _context.GioHang
+                                  .FirstOrDefaultAsync(model => model.Id == gioHangItem.GioHangId);
+
+                var book = await _context.Book
+                                 .FirstOrDefaultAsync(model => model.Id == gioHangItem.BookId);
+
+
+              
+                    _logger.LogError("id book : " + gioHangItem.BookId);
+                    _logger.LogError("id gio hang : " + gioHangItem.Id);
+                    _logger.LogError("gio hang: " + gioHangItem.GioHangId);
+                    _logger.LogError("so luong : " + gioHangItem.SoLuong);
+                    _logger.LogError("gia : " + gioHangItem.Gia);
+               
+                gioHangItem.Gia = book.Gia;
+         
+
+                if (gioHang != null)
+                {
+                    // Cập nhật tổng tiền ngay lập tức
+                    gioHang.TongTien += gioHangItem.SoLuong * book.Gia;
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    await _context.SaveChangesAsync();
+                }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", gioHangItem.BookId);
+            ViewData["BookId"] = new SelectList(_context.Book, "Id", "TenSach", gioHangItem.BookId);
             ViewData["GioHangId"] = new SelectList(_context.GioHang, "Id", "IDNguoiDung", gioHangItem.GioHangId);
             return View(gioHangItem);
         }

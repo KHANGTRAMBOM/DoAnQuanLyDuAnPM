@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RYS6cEwl7QyAMOfVbvUx4afoIM9NhpUjqaqmsgIpTjM=",
+  "Hash": "gYTXyJnoiKS7roy9S5gHUCYo+dnfxj5C/YsJedSzoS0=",
   "Source": "BookWebsite",
   "BasePath": "_content/BookWebsite",
   "Mode": "Default",
@@ -1409,6 +1409,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Image\\KinhTeHocViMo\\1.jpg"
+    },
+    {
+      "Identity": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\lichsuloainguoi.jpg",
+      "SourceId": "BookWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\",
+      "BasePath": "_content/BookWebsite",
+      "RelativePath": "Image/lichsuloainguoi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\lichsuloainguoi.jpg"
     },
     {
       "Identity": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\LichSuLoaiNguoi\\1.jpg",

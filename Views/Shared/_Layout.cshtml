@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,43 +14,113 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Book Store</a>
+                @if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin") )
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Books" asp-action="Index2">Book Store</a>
+                }
+                else
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Books" asp-action="Index1">Book Store</a>
+                }
+
+  
+                
+           
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1">      
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index">Trang Book</a>
-                        </li>         
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TheLoais" asp-action="Index">Trang The Loai</a>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="TheLoais" asp-action="Index">Trang The Loai</a>
+                                }
+                                else
+                                {
+                                   
+                                }
+                            }
+                            
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LoaiPhuongThucThanhToans" asp-action="Index">Loai Thanh Toan</a>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="LoaiPhuongThucThanhToans" asp-action="Index">Loai Thanh Toan</a>
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                           
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DonHangs" asp-action="Index">Don Hang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="GioHangs" asp-action="Index">Gio Hang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="GioHangItems" asp-action="Index">Gio Hang Item</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ThanhToans" asp-action="Index">Thanh Toan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DanhGias" asp-action="Index">Danh Gia</a>
-                        </li>
-                           <li class="nav-item">
-                            <a class="nav-link text-dark" href="~/Areas/Identity/Pages/Account/Manage/Index.cshtml">Quản lý người dùng</a>
-          
-                        </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="DonHangs" asp-action="Index">Don Hang</a>
+                                }
+                                else
+                                {
                        
-                    
+                                }
+                            }
+                       
+                        </li>
+
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="GioHangs" asp-action="Index">Gio Hang</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="GioHangs" asp-action="GetUserCart">Gio Hang</a>
+                                }
+                            }
+                        </li>
+
+                       
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                   <a class="nav-link text-dark" asp-area="" asp-controller="GioHangItems" asp-action="Index">Gio Hang Item</a>
+                                }
+                           
+                            }
+                           
+                        </li>
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ThanhToans" asp-action="Index">Thanh Toan</a>
+                                }
+
+                            }
+                           
+                        </li>
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="DanhGias" asp-action="Index">Danh Gia</a>
+                                }
+
+                            }                                                                            
                     </ul>
                     <partial name="_LoginPartial" />
 

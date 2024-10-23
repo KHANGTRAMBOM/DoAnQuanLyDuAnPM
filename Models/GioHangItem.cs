@@ -10,10 +10,12 @@ namespace BookWebsite.Models
 
         [Required]
         [ForeignKey("GioHang")]
+        [Display(Name = "Mã giỏ hàng")]
         public int GioHangId { get; set; }
 
         [Required]
         [ForeignKey("Book")]
+        [Display(Name = "Tên Sách")]
         public int BookId { get; set; }
 
         [Required]
@@ -27,8 +29,8 @@ namespace BookWebsite.Models
         public decimal Gia { get; set; }
 
         // Navigation properties
-        public GioHang GioHang { get; set; }
-        public Book Book { get; set; }
+        public GioHang? GioHang { get; set; }
+        public Book? Book { get; set; }
     }
  
 }

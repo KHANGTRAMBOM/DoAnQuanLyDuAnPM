@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookWebsite.Models
 {
@@ -9,7 +10,7 @@ namespace BookWebsite.Models
         [DisplayName("Mã đánh giá")]
         public int Id { get; set; }
 
-        [Required]
+    
         [DisplayName("Mã người dùng")]
         [ForeignKey("NguoiDung")]
         public string IDNguoiDung { get; set; } // ID người dùng
@@ -30,8 +31,8 @@ namespace BookWebsite.Models
 
 
         // Navigation property
-        public NguoiDung NguoiDung { get; set; }
+        public IdentityUser? NguoiDung { get; set; }
 
-        public Book Book { get; set; }
+        public Book? Book { get; set; }
     }
 }

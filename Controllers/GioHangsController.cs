@@ -7,22 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookWebsite.Controllers
 {
     public class GioHangsController : Controller
     {
+        private readonly ILogger<GioHangsController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public GioHangsController(ApplicationDbContext context)
+        public GioHangsController(ApplicationDbContext context, ILogger<GioHangsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: GioHangs
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.GioHang.Include(g => g.NguoiDung);
+   
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -42,14 +46,23 @@ namespace BookWebsite.Controllers
                 return NotFound();
             }
 
+            // Lay sach cua gio hang ra
+            var gioHangitems = await _context.GioHangItem
+                                .Where(item => item.GioHangId == id)
+                                .Include(item => item.Book) 
+                                .ToListAsync();
+
+            ViewBag.gioHang = gioHangitems.ToList();
+
+
             return View(gioHang);
         }
 
         // GET: GioHangs/Create
         public IActionResult Create()
         {
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id");
-            return View();
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "UserName");
+            return View();  
         }
 
         // POST: GioHangs/Create
@@ -65,7 +78,22 @@ namespace BookWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", gioHang.IDNguoiDung);
+
+            _logger.LogError(gioHang.Id + "");
+            _logger.LogError(gioHang.IDNguoiDung + "");
+            _logger.LogError(gioHang.TongTien + "");
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                foreach (var error in errors)
+                {
+                    _logger.LogError(error);
+                }
+            }
+
+
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "UserName", gioHang.IDNguoiDung);
             return View(gioHang);
         }
 
@@ -82,7 +110,7 @@ namespace BookWebsite.Controllers
             {
                 return NotFound();
             }
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", gioHang.IDNguoiDung);
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id", gioHang.IDNguoiDung);
             return View(gioHang);
         }
 
@@ -118,7 +146,7 @@ namespace BookWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", gioHang.IDNguoiDung);
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id", gioHang.IDNguoiDung);
             return View(gioHang);
         }
 
@@ -163,6 +191,31 @@ namespace BookWebsite.Controllers
         private bool GioHangExists(int id)
         {
           return (_context.GioHang?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
+
+        //Khi dang nhap click vao gio hang se hien thi chi tiet gio hang cua nguoi dung do luon chi tro phep xem thoi
+        public async Task<IActionResult> GetUserCart()
+        {
+            // Lấy UserId từ người dùng hiện tại
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+
+     
+
+            // Truy vấn để lấy giỏ hàng của người dùng
+            var gioHang = await _context.GioHang
+                            .Where(g => g.IDNguoiDung == userId)
+                            .FirstOrDefaultAsync();
+
+
+      
+            if (gioHang == null)
+            {
+                return NotFound("Giỏ hàng không tồn tại.");
+            }
+
+            // Trả về giỏ hàng hoặc mã giỏ hàng
+            return RedirectToAction("Details", new { id = gioHang.Id });
         }
     }
 }

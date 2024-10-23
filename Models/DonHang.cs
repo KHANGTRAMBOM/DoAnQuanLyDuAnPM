@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookWebsite.Models
 {
@@ -11,7 +12,7 @@ namespace BookWebsite.Models
         [DisplayName("Mã đơn hàng")]
         public int Id { get; set; }
 
-        [Required]
+
         [DisplayName("Mã người dùng")]
         [ForeignKey("NguoiDung")]
         public string IdUser { get; set; } // ID người dùng đã đặt hàng - Khóa ngoại tham chiếu đến mã người dùng 
@@ -28,7 +29,7 @@ namespace BookWebsite.Models
 
 
         //Navigation Properties
-        public NguoiDung NguoiDung { get; set; }
+        public IdentityUser? NguoiDung { set; get; }
 
     }
 }

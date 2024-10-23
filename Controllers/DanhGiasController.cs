@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Data;
 
 namespace BookWebsite.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DanhGiasController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -50,7 +54,7 @@ namespace BookWebsite.Controllers
         public IActionResult Create()
         {
             ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB");
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id");
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id");
             return View();
         }
 
@@ -68,7 +72,7 @@ namespace BookWebsite.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", danhGia.BookId);
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", danhGia.IDNguoiDung);
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id", danhGia.IDNguoiDung);
             return View(danhGia);
         }
 
@@ -86,7 +90,7 @@ namespace BookWebsite.Controllers
                 return NotFound();
             }
             ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", danhGia.BookId);
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", danhGia.IDNguoiDung);
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id", danhGia.IDNguoiDung);
             return View(danhGia);
         }
 
@@ -123,7 +127,7 @@ namespace BookWebsite.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", danhGia.BookId);
-            ViewData["IDNguoiDung"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", danhGia.IDNguoiDung);
+            ViewData["IDNguoiDung"] = new SelectList(_context.Set<IdentityUser>(), "Id", "UserName", danhGia.IDNguoiDung);
             return View(danhGia);
         }
 

@@ -117,6 +117,10 @@
       "PackagePath": "staticwebassets\\Image\\dddddddd.jpg"
     },
     {
+      "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\Image\\lichsuloainguoi.jpg",
+      "PackagePath": "staticwebassets\\Image\\lichsuloainguoi.jpg"
+    },
+    {
       "Id": "D:\\ASP.NET\\DO AN QLDAPM\\BookWebsite\\DoAnQuanLyDuAnPM\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

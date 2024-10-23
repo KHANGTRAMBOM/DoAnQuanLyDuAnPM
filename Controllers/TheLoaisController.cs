@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookWebsite.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TheLoaisController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
 using Microsoft.CodeAnalysis.Elfie.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace BookWebsite.Controllers
 {
@@ -31,6 +33,11 @@ namespace BookWebsite.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Index2()
+        {
+            var applicationDbContext = _context.Book.Include(b => b.TheLoai);
+            return View(await applicationDbContext.ToListAsync());
+        }
         // GET: Books/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -62,6 +69,7 @@ namespace BookWebsite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,TenSach,TacGia,Gia,NXB,NamXB,UrlAnh,MoTa,TheLoaiId")] Book book,IFormFile FileAnh)
         {
 
@@ -121,6 +129,7 @@ namespace BookWebsite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,TenSach,TacGia,Gia,NXB,NamXB,UrlAnh,MoTa,TheLoaiId")] Book book,IFormFile FileAnh)
         {
             if (id != book.Id)
@@ -129,20 +138,6 @@ namespace BookWebsite.Controllers
             }
 
             TempData["EditStatus"] = null;
-
-            /*        _logger.LogWarning($"ID: {book.Id}");
-        _logger.LogWarning($"TenSach: {book.TenSach}");
-        _logger.LogWarning($"Tacgia: {book.TacGia}");
-        _logger.LogWarning($"Gia: {book.Gia}");
-        _logger.LogWarning($"NXB: {book.NXB}");
-        _logger.LogWarning($"Namxb: {book.NamXB}");
-        _logger.LogWarning($"UrlAnh: {book.UrlAnh}");
-        _logger.LogWarning($"Mota: {book.MoTa}");
-        _logger.LogWarning($"TheLoaiID: {book.TheLoaiId}");
-        _logger.LogWarning($"FileAnh: {FileAnh.FileName}");*/
-
-
-
 
             if (FileAnh != null && FileAnh.Length > 0)
             {
@@ -212,6 +207,7 @@ namespace BookWebsite.Controllers
         // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Book == null)

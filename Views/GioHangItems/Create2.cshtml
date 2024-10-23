@@ -13,19 +13,13 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group mb-3">
-               @if(User.IsInRole("Admin"))
-                {
-                    <label asp-for="GioHangId" class="control-label"></label>
-                    <select asp-for="GioHangId" class="form-control" asp-items="ViewBag.GioHangId"></select>
-                }       
+       
+                 <label asp-for="GioHangId" class="control-label" type="hidden"></label>
             </div>
             <div class="form-group mb-3">
-                <label asp-for="BookId" class="control-label"></label>
-                @if (User.IsInRole("Admin"))
-                {
-                    <select asp-for="BookId" class="form-control" asp-items="ViewBag.BookId"></select>
-                }
-           
+                <label asp-for="BookId" class="control-label"></label>       
+                   <input type="hidden" asp-for="BookId" value="@ViewBag.SelectedBook.Id" />
+                    <input type="text" class="form-control" value="@ViewBag.SelectedBook.TenSach" readonly />
             </div>
             <div class="form-group mb-3">
                 <label asp-for="SoLuong" class="control-label"></label>
@@ -34,7 +28,7 @@
             </div>
             <div class="form-group mb-3">
                 <label asp-for="Gia" class="control-label"></label>
-                <input asp-for="Gia" class="form-control"/>
+                <input asp-for="Gia" class="form-control" />
                 <span asp-validation-for="Gia" class="text-danger"></span>
             </div>
             <div class="form-group ">
@@ -45,7 +39,7 @@
 </div>
 
 <div>
-    @if(User.IsInRole("Admin"))
+    @if (User.IsInRole("Admin"))
     {
         <a asp-action="Index">Back to List</a>
     }
@@ -58,5 +52,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

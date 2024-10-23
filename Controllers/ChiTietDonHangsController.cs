@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace BookWebsite.Controllers
 {
+    [Authorize(Roles = "Admin,Member")]
     public class ChiTietDonHangsController : Controller
     {
         private readonly ApplicationDbContext _context;

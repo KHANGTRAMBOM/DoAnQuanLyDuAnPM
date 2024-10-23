@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BookWebsite.Models.Book>
+@using Microsoft.AspNetCore.Identity;
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "BSTORE";
+}
+
+<h1 class="text-center display-1 mb-3">NHÀ SÁCH @ViewData["Title"]</h1>
+<h3 class="text-center small mb-3" style="font-style: italic;">CHÍNH TRỰC - TẬN TÂM - SÁNG TẠO</h3>
+
+<div class="row mb-3">
+    @foreach (var item in Model)
+    {
+        <div class="col-3 mb-3">
+            <div class="card" style="width: 18rem;">
+                <img src="@item.UrlAnh" class="card-img-top" width="100" alt="Book Image">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenSach)</h5>
+                    <p class="card-text text-danger fw-bold">@Html.DisplayFor(modelItem => item.Gia)</p>
+                    <a href="@Url.Action("Create2", "GioHangItems", new { bookId = item.Id , Usermail = (string)this.User.FindFirstValue(ClaimTypes.Email)})" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

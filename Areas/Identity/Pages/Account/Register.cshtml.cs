@@ -117,6 +117,7 @@ namespace BookWebsite.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                await _userManager.AddToRoleAsync(user, "Member");
 
                 if (result.Succeeded)
                 {
@@ -141,7 +142,18 @@ namespace BookWebsite.Areas.Identity.Pages.Account
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+
+                        // Kiểm tra vai trò của user sau khi đăng nhập
+                        if (await _userManager.IsInRoleAsync(user, "Admin"))
+                        {
+                            // Nếu là admin, chuyển hướng đến trang admin
+                            return LocalRedirect(Url.Content("~/Books/Index"));
+                        }
+                        else
+                        {
+                            // Nếu không phải admin, chuyển hướng đến trang user
+                            return LocalRedirect(Url.Content("~/Books/Index2"));
+                        }
                     }
                 }
                 foreach (var error in result.Errors)

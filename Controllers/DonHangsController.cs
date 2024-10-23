@@ -7,16 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookWebsite.Data;
 using BookWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BookWebsite.Controllers
 {
+    [Authorize(Roles = "Admin,Member")]
     public class DonHangsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<DonHangsController> _logger;
 
-        public DonHangsController(ApplicationDbContext context)
+        public DonHangsController(ApplicationDbContext context, ILogger<DonHangsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: DonHangs
@@ -48,7 +54,7 @@ namespace BookWebsite.Controllers
         // GET: DonHangs/Create
         public IActionResult Create()
         {
-            ViewData["IdUser"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id");
+            ViewData["IdUser"] = new SelectList(_context.Set<IdentityUser>(), "Id", "UserName");
             return View();
         }
 
@@ -63,9 +69,12 @@ namespace BookWebsite.Controllers
             {
                 _context.Add(donHang);
                 await _context.SaveChangesAsync();
+                _logger.LogError("Da them thanh cong");
                 return RedirectToAction(nameof(Index));
+                
             }
-            ViewData["IdUser"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", donHang.IdUser);
+
+            ViewData["IdUser"] = new SelectList(_context.Set<IdentityUser>(), "Id", "UserName", donHang.IdUser);
             return View(donHang);
         }
 
@@ -82,7 +91,7 @@ namespace BookWebsite.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdUser"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", donHang.IdUser);
+            ViewData["IdUser"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id", donHang.IdUser);
             return View(donHang);
         }
 
@@ -118,7 +127,7 @@ namespace BookWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdUser"] = new SelectList(_context.Set<NguoiDung>(), "Id", "Id", donHang.IdUser);
+            ViewData["IdUser"] = new SelectList(_context.Set<IdentityUser>(), "Id", "Id", donHang.IdUser);
             return View(donHang);
         }
 

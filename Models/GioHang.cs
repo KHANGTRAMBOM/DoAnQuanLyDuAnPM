@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookWebsite.Models
 {
@@ -12,7 +13,7 @@ namespace BookWebsite.Models
 
         [Required]
         [ForeignKey("NguoiDung")]
-        [DisplayName("Mã người dùng")]
+        [DisplayName("Tên người dùng")]
         public string IDNguoiDung { get; set; }
 
         [DisplayName("Tổng tiền")]
@@ -21,7 +22,7 @@ namespace BookWebsite.Models
         public decimal TongTien { get; set; }
 
         // Navigation property
-        public NguoiDung NguoiDung { get; set; }
+        public IdentityUser? NguoiDung { get; set; }
  
     }
 
