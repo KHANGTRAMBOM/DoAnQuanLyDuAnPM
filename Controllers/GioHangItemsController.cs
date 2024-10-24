@@ -10,7 +10,8 @@ using BookWebsite.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using System.Net;
 
 namespace BookWebsite.Controllers
 {
@@ -69,41 +70,96 @@ namespace BookWebsite.Controllers
         }
 
 
-        // GET: GioHangItems/Create
-        public IActionResult Create2(int BookId,string Usermail)
+        // GET: GioHangItems/Create2
+        public async Task<IActionResult> Create2(int BookId)
         {
-            // Lấy người dùng dựa trên email
-
-            var user = _context.Users.FirstOrDefault(model => model.Email == Usermail);
-
-            if (user == null)
-            {
-                // Xử lý trường hợp không tìm thấy người dùng
-                _logger.LogError("User null: " + Usermail);
-                return NotFound(); // Hoặc chuyển hướng đến trang lỗi
-            }
-
             // Lấy ID của người dùng
-            var userId = user.Id; // Giả sử đây là kiểu int
-
-            // Kiểm tra giá trị userId trước khi sử dụng
-            if (userId == null)
-            {
-                // Xử lý trường hợp không tìm thấy ID
-                _logger.LogError("UseId null");
-                return NotFound(); // Hoặc chuyển hướng đến trang lỗi
-            }
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
             // Tìm giỏ hàng dựa trên ID người dùng
-            ViewData["GioHangId"] = _context.GioHang
-                                            .FirstOrDefault(model => model.IDNguoiDung == userId);
+            ViewData["GioHang"] = _context.GioHang
+                                          .FirstOrDefault(g => g.IDNguoiDung == userId);
 
             // Lấy sách đã chọn
             ViewData["SelectedBook"] = _context.Book
-                                                .FirstOrDefault(model => model.Id == BookId);
+                                                .FirstOrDefault(b => b.Id == BookId);
 
+ 
             return View();
         }
+
+        // POST: GioHangItems/Create2
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create2([Bind("Id,GioHangId,BookId,SoLuong,Gia")] GioHangItem gioHangItem)
+        {
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+
+            if (ModelState.IsValid)
+            {
+                var a = await _context.GioHangItem
+                                .Where(model => model.GioHangId == gioHangItem.GioHangId)
+                                .Where(model => model.BookId == gioHangItem.BookId)
+                                .FirstOrDefaultAsync();
+
+                var gioHang = await _context.GioHang
+                                 .FirstOrDefaultAsync(model => model.Id == gioHangItem.GioHangId);
+
+
+                var book = await _context.Book
+                                 .FirstOrDefaultAsync(model => model.Id == gioHangItem.BookId);
+
+                // đã có một cuốn sách giống loại muốn mua nằm trong giỏ hàng
+                if (a != null)
+                {
+  
+                    gioHang.TongTien += gioHangItem.SoLuong * book.Gia;
+
+                    a.SoLuong += gioHangItem.SoLuong;
+
+
+                }
+                else
+                {
+
+                    _context.Add(gioHangItem);
+
+                    //Gán lại giá của sách giống với model
+                    gioHangItem.Gia = book.Gia;
+
+                    if (gioHang != null)
+                    {
+                        // Cập nhật tổng tiền ngay lập tức
+                        gioHang.TongTien += gioHangItem.SoLuong * book.Gia;
+
+
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+
+
+
+                return RedirectToAction("Index2","Books");
+            }
+
+
+
+            ViewData["GioHang"] = _context.GioHang
+                                         .FirstOrDefault(g => g.IDNguoiDung == userId);
+
+
+
+            ViewData["SelectedBook"] = _context.Book
+                                                .FirstOrDefault(b => b.Id == gioHangItem.BookId);
+            
+            return View(gioHangItem);
+        }
+
 
         // POST: GioHangItems/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -112,6 +168,8 @@ namespace BookWebsite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,GioHangId,BookId,SoLuong,Gia")] GioHangItem gioHangItem)
         {
+
+
             if (ModelState.IsValid)
             {
                 // Thêm GioHangItem vào cơ sở dữ liệu
@@ -123,15 +181,8 @@ namespace BookWebsite.Controllers
 
                 var book = await _context.Book
                                  .FirstOrDefaultAsync(model => model.Id == gioHangItem.BookId);
+        
 
-
-              
-                    _logger.LogError("id book : " + gioHangItem.BookId);
-                    _logger.LogError("id gio hang : " + gioHangItem.Id);
-                    _logger.LogError("gio hang: " + gioHangItem.GioHangId);
-                    _logger.LogError("so luong : " + gioHangItem.SoLuong);
-                    _logger.LogError("gia : " + gioHangItem.Gia);
-               
                 gioHangItem.Gia = book.Gia;
          
 
@@ -175,6 +226,62 @@ namespace BookWebsite.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,GioHangId,BookId,SoLuong,Gia")] GioHangItem gioHangItem)
+        {
+            if (id != gioHangItem.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(gioHangItem);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!GioHangItemExists(gioHangItem.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["BookId"] = new SelectList(_context.Book, "Id", "TenSach", gioHangItem.BookId);
+            ViewData["GioHangId"] = new SelectList(_context.GioHang, "Id", "IDNguoiDung", gioHangItem.GioHangId);
+            return View(gioHangItem);
+        }
+
+
+        // GET: GioHangItems/Edit/5
+        public async Task<IActionResult> Edit2(int? id)
+        {
+            if (id == null || _context.GioHangItem == null)
+            {
+                return NotFound();
+            }
+
+            var gioHangItem = await _context.GioHangItem.FindAsync(id);
+            if (gioHangItem == null)
+            {
+                return NotFound();
+            }
+            ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", gioHangItem.BookId);
+            ViewData["GioHangId"] = new SelectList(_context.GioHang, "Id", "IDNguoiDung", gioHangItem.GioHangId);
+            return View(gioHangItem);
+        }
+
+        // POST: GioHangItems/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit2(int id, [Bind("Id,GioHangId,BookId,SoLuong,Gia")] GioHangItem gioHangItem)
         {
             if (id != gioHangItem.Id)
             {
@@ -245,9 +352,62 @@ namespace BookWebsite.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+
+        // GET: GioHangItems/Delete2/5
+        public async Task<IActionResult> Delete2(int? id)
+        {
+            if (id == null || _context.GioHangItem == null)
+            {
+                return NotFound();
+            }
+
+            var gioHangItem = await _context.GioHangItem
+                .Include(g => g.Book)
+                .Include(g => g.GioHang)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (gioHangItem == null)
+            {
+                return NotFound();
+            }
+
+            return View(gioHangItem);
+        }
+
+        // POST: GioHangItems/Delete2/5
+        [HttpPost, ActionName("Delete2")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed2(int id)
+        {
+            if (_context.GioHangItem == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.GioHangItem'  is null.");
+            }
+            var gioHangItem = await _context.GioHangItem.FindAsync(id);
+
+            var gioHang = await _context.GioHang.FirstOrDefaultAsync(m => m.Id == gioHangItem.GioHangId);
+
+            gioHang.TongTien -= gioHangItem.SoLuong * gioHangItem.Gia;
+
+            if (gioHangItem != null)
+            {
+                _context.GioHangItem.Remove(gioHangItem);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Details","GioHangs", new { id = gioHang.Id });
+        }
+
         private bool GioHangItemExists(int id)
         {
           return (_context.GioHangItem?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
+
+        private GioHangItem KiemTraTrungTenSach(int BookId)
+        {
+            return _context.GioHangItem.FirstOrDefault(model => model.BookId == BookId);
+                             
         }
     }
 }

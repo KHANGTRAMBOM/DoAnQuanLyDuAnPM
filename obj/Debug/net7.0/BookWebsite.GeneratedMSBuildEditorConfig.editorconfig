@@ -272,12 +272,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ0l0ZW1zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/GioHangItems/Delete2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ0l0ZW1zXERlbGV0ZTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/GioHangItems/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ0l0ZW1zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/GioHangItems/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ0l0ZW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/GioHangItems/Edit2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ0l0ZW1zXEVkaXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/GioHangItems/Index.cshtml]

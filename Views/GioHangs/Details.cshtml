@@ -14,33 +14,46 @@
             @Html.DisplayFor(model => model.TongTien)
         </dd>
         <dt class = "col-sm-2">
-            Tên người dùng
+            Khách hàng
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NguoiDung.UserName)
         </dd>
 
-        <h4 class="mb-4">Các sách trong giỏ hàng:</h4>
         <table class="table">
             <thead>
                 <tr>
+
+                    <th>
+                        Tên sách
+                    </th>
+                    <th>
+                        Số lượng
+                    </th>
+                    <th>
+                        Giá
+                    </th>
+
+
                     <th></th>
-                    <th>Tên sách</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
                 </tr>
             </thead>
             <tbody>
-                @for(int i =0; i < ViewBag.gioHang.Count;i++)
+
+                @for (int i = 0; i < ViewBag.gioHangitem.Count; i++)
                 {
                     <tr>
-                        <td scope="row">@(i + 1)</td>
-                        <td>@ViewBag.gioHang[i].Book.TenSach</td>
-                        <td>@ViewBag.gioHang[i].SoLuong</td>
-                        <td>@ViewBag.gioHang[i].Book.Gia</td>
+                        <td>@ViewBag.gioHangitem[i].Book.TenSach</td>
+                        <td>@ViewBag.gioHangitem[i].SoLuong</td>
+                        <td>@ViewBag.gioHangitem[i].Book.Gia</td>
+
+                        <td>
+                            <a  class ="btn btn-primary" asp-action="Edit2" asp-controller="GioHangItems" asp-route-id="@ViewBag.gioHangitem[i].Id">Chỉnh sửa</a> 
+                            <a  class="btn btn-success" asp-action="Details" asp-controller="GioHangItems" asp-route-id="@ViewBag.gioHangitem[i].Id">Xem sản phẩm</a> 
+                            <a  class ="btn btn-danger" asp-action="Delete2" asp-controller="GioHangItems" asp-route-id="@ViewBag.gioHangitem[i].Id">Xóa</a>
+                        </td>
                     </tr>
                 }
-             
             </tbody>
         </table>
     </dl>

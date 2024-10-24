@@ -41,6 +41,7 @@ namespace BookWebsite.Controllers
             var gioHang = await _context.GioHang
                 .Include(g => g.NguoiDung)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (gioHang == null)
             {
                 return NotFound();
@@ -52,8 +53,9 @@ namespace BookWebsite.Controllers
                                 .Include(item => item.Book) 
                                 .ToListAsync();
 
-            ViewBag.gioHang = gioHangitems.ToList();
-
+           
+            ViewBag.gioHangitem = gioHangitems.ToList();
+       
 
             return View(gioHang);
         }
