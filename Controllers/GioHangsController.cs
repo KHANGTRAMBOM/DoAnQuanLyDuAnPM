@@ -219,5 +219,70 @@ namespace BookWebsite.Controllers
             // Trả về giỏ hàng hoặc mã giỏ hàng
             return RedirectToAction("Details", new { id = gioHang.Id });
         }
+
+        public async Task<IActionResult> TaoDonHang()
+        {
+            // Lấy UserId từ người dùng hiện tại
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+
+            var gioHang = await _context.GioHang
+                            .Where(g => g.IDNguoiDung == userId)
+                            .FirstOrDefaultAsync();
+
+            var gioHangItems = await _context.GioHangItem
+                                .Where(model => model.GioHangId == gioHang.Id)
+                                .ToListAsync();
+
+            // Tạo đơn hàng
+            var DonHang = new DonHang
+            {
+                IdUser = userId,
+                NgayDat = DateTime.Now,
+                TongTien = gioHang.TongTien
+            };
+
+            await _context.DonHang.AddAsync(DonHang);
+
+            // Lưu đơn hàng để tạo Id
+            await _context.SaveChangesAsync();
+
+            // Tạo chi tiết hóa đơn
+            foreach (var gioHangItem in gioHangItems)
+            {
+                var ChiTietDonHang = new ChiTietDonHang
+                {
+                    IDDonHang = DonHang.Id,
+                    BookId = gioHangItem.BookId,
+                    SoLuong = gioHangItem.SoLuong,
+                    Gia = gioHangItem.Gia
+                };
+                await _context.ChiTietDonHang.AddAsync(ChiTietDonHang);
+            }
+
+            // Tạo thanh toán
+            var ThanhToan = new ThanhToan
+            {
+                NgayThanhToan = DateTime.Now,
+                DonHangId = DonHang.Id,
+                Status = false,
+                PhuongThucThanhToanId = _context.LoaiPhuongThucThanhToan
+                                            .Where(model => model.TenPhuongThucThanhToan == "Tiền mặt")
+                                            .FirstOrDefault().Id,
+                Total = DonHang.TongTien
+            };
+
+            await _context.ThanhToan.AddAsync(ThanhToan);
+
+            // Xóa các mặt hàng trong giỏ hàng
+            _context.GioHangItem.RemoveRange(gioHangItems);
+            gioHang.TongTien = 0;
+
+            // Lưu tất cả thay đổi
+            await _context.SaveChangesAsync();
+
+            // Trả về giỏ hàng hoặc mã giỏ hàng
+            return RedirectToAction("Index2", "ThanhToans", new { userId });
+        }
+
     }
 }

@@ -56,7 +56,6 @@ namespace BookWebsite.Data
         public DbSet<BookWebsite.Models.Book> Book { get; set; } = default!;
         public DbSet<BookWebsite.Models.TheLoai> TheLoai { get; set; } = default!;
         public DbSet<BookWebsite.Models.ChiTietDonHang> ChiTietDonHang { get; set; } = default!;
-        public DbSet<BookWebsite.Models.DanhGia> DanhGia { get; set; } = default!;
         public DbSet<BookWebsite.Models.DonHang> DonHang { get; set; } = default!;
         public DbSet<BookWebsite.Models.GioHang> GioHang { get; set; } = default!;
         public DbSet<BookWebsite.Models.GioHangItem> GioHangItem { get; set; } = default!;

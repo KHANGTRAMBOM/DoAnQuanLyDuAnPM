@@ -34,7 +34,12 @@
             <td>
                     <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Xem chi tiết</a>
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Xóa giỏ hàng</a>
-            </td>
+                    @if(User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Chỉnh sửa</a>
+                    }
+                  
+                </td>
         </tr>
 }
     </tbody>

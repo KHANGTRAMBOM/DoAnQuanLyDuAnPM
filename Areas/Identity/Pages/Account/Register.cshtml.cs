@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using BookWebsite.Data;
+using BookWebsite.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -29,13 +31,14 @@ namespace BookWebsite.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly ApplicationDbContext _context;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, ApplicationDbContext context)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +46,7 @@ namespace BookWebsite.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         /// <summary>
@@ -141,6 +145,13 @@ namespace BookWebsite.Areas.Identity.Pages.Account
                     }
                     else
                     {
+                        var GioHang = new GioHang();
+                        GioHang.IDNguoiDung = user.Id;
+                        GioHang.TongTien = 0;
+                        
+                        await _context.GioHang.AddAsync(GioHang);
+                        await _context.SaveChangesAsync();
+
                         await _signInManager.SignInAsync(user, isPersistent: false);
 
                         // Kiểm tra vai trò của user sau khi đăng nhập

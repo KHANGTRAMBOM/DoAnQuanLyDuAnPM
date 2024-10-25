@@ -1,0 +1,98 @@
+﻿@model IEnumerable<BookWebsite.Models.ThanhToan>
+
+@{
+    ViewData["Title"] = "Danh sách hóa đơn của bạn";
+}
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+
+
+@if (TempData["CreateStatus"] != null)
+{
+    <div class="alert alert-success" id="successMessage">
+        Thanh toán thành công
+    </div>
+}
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Đơn hàng
+            </th>
+
+            <th>
+                Ngày thanh toán
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+            <th>
+                Phương thức thanh toán
+            </th>
+            <th>
+                Tình trạng thanh toán
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonHang.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiPhuongThucThanhToan.TenPhuongThucThanhToan)
+            </td>
+
+                @if (item.Status)
+                {
+                    
+                    <td>
+                        <a class="btn btn-secondary" readonly>Đã thanh toán</a>
+                    </td>
+
+                    <td>
+                        <a asp-action="ThanhToan" class="btn btn-primary" asp-route-id="@item.Id">Xem chi tiết</a>
+                    </td>
+
+                }
+                else
+                {
+                    <td>
+                        <a asp-action="ThanhToan" class="btn btn-primary" asp-route-id="@item.Id">Thanh toán</a>
+                    </td>               
+                }
+         
+            
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+<script>
+    // Chờ một vài giây (5000 ms = 5 giây) trước khi ẩn thông báo
+    setTimeout(function () {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.style.display = 'none'; // Ẩn thông báo
+        }
+    }, 5000);
+
+</script>

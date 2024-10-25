@@ -14,7 +14,7 @@
     {
         <div class="col-3 mb-3">
             <div class="card" style="width: 18rem;">
-                <img src="@item.UrlAnh" class="card-img-top" width="100" alt="Book Image">
+                <a asp-controller="Books" asp-action="Details" asp-route-id ="@item.Id"> <img src="@item.UrlAnh" class="card-img-top" width="100" alt="Book Image"> </a>
                 <div class="card-body">
                     <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenSach)</h5>
                     <p class="card-text text-danger fw-bold">@Html.DisplayFor(modelItem => item.Gia)</p>

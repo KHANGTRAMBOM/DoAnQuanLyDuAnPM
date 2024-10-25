@@ -1,0 +1,114 @@
+﻿@model BookWebsite.Models.ThanhToan
+@using Microsoft.AspNetCore.Identity;
+
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="ThanhToan">
+    <input name="THANHTOANID" id="THANHTOANID" value="@ViewBag.thanhToan.Id" type="hidden" />
+    <div>
+        <hr />
+        <dl class="row fs-3">
+            <dt class="col-sm-2">
+                Đơn hàng
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DonHang.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NgayThanhToan)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NgayThanhToan)
+            </dd>
+            <dt class="col-sm-2">
+                Phương thức thanh toán
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.Status)
+                {
+                    @Model.LoaiPhuongThucThanhToan.TenPhuongThucThanhToan
+                }
+                else
+                {
+                    <select asp-for="PhuongThucThanhToanId" class="form-control" asp-items="ViewBag.PhuongThucThanhToanId"></select>
+                }
+              
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Total)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.Status)
+                {
+                    <a class="btn btn-primary" readonly>Đã Thanh Toán</a>
+                }
+                else
+                {
+                    <a class="btn btn-primary" readonly>Chưa Thanh Toán</a>
+                }
+            </dd>
+
+            @if (!Model.Status)
+            {
+                <div class="mb-3">
+                    <input type="submit" value="Thanh Toán" class="btn btn-danger fs-4" />
+                </div>
+            }
+        </dl>
+    </div>
+
+</form>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th class="fs-3">
+                    Tên sách
+                </th>
+                <th class="fs-3">
+                    Số lượng
+                </th>
+                <th class="fs-3">
+                    Giá
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < ViewBag.gioHangitem.Count; i++)
+            {
+                <tr class>
+                    <td class="fs-3">@ViewBag.gioHangitem[i].Book.TenSach</td>
+                    <td class="fs-3">@ViewBag.gioHangitem[i].SoLuong</td>
+                    <td class="fs-3">@ViewBag.gioHangitem[i].Book.Gia</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+        < a asp - action = "Index" > Back to List</ a >
+    }
+</div>

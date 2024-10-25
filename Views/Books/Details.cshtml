@@ -1,66 +1,82 @@
 ﻿@model BookWebsite.Models.Book
+@using Microsoft.AspNetCore.Identity;
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết sản phẩm";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"] </h1>
 
 <div>
-    <h4>Book</h4>
+  
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
+    <style>
+        .custom-font-size {
+            font-size: 1.25rem; /* Tăng kích thước chữ, có thể điều chỉnh giá trị này */
+        }
+    </style>
+
+    <dl class="row custom-font-size">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TenSach)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TenSach)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TacGia)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TacGia)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Gia)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Gia)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.NXB)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NXB)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.NamXB)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NamXB)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UrlAnh)
-        </dt>
-        <dd class = "col-sm-10">
-            <img src="~/@Model.UrlAnh" width="300" class="img-thumbnail" alt="Book Image" />
-        </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MoTa)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MoTa)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TheLoai)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TheLoaiId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TheLoai.TenTheLoai)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UrlAnh)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/@Model.UrlAnh" width="300" class="img-thumbnail" alt="Book Image" />
+        </dd>
     </dl>
+
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if(User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+        <a asp-action="Index"> Back to List </a>
+    }
+    else
+    {
+        <a class ="btn btn-primary" asp-action="Index2">Trở về</a>
+    }
+
 </div>

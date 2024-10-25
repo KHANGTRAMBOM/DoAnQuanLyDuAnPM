@@ -12,14 +12,16 @@ using System.Data;
 
 namespace BookWebsite.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Member")]
     public class ThanhToansController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<ThanhToansController> _logger;
 
-        public ThanhToansController(ApplicationDbContext context)
+        public ThanhToansController(ApplicationDbContext context, ILogger<ThanhToansController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: ThanhToans
@@ -29,6 +31,18 @@ namespace BookWebsite.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+
+        public async Task<IActionResult> Index2(string userId)
+        {
+            // Truy vấn `ThanhToan` theo `userId`
+            var applicationDbContext = _context.ThanhToan
+                                         .Include(t => t.DonHang)
+                                         .Include(t => t.LoaiPhuongThucThanhToan)
+                                         .Where(t => t.DonHang.IdUser == userId);
+            
+
+            return View(await applicationDbContext.ToListAsync());
+        }
         // GET: ThanhToans/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -173,5 +187,84 @@ namespace BookWebsite.Controllers
         {
           return (_context.ThanhToan?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        public async Task<IActionResult> GetUserWallet()
+        {
+            // Lấy UserId từ người dùng hiện tại
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+
+            return RedirectToAction("Index2", new { userId = userId });
+        }
+
+        public async Task<IActionResult> ThanhToan(int? id)
+        {
+            if (id == null || _context.ThanhToan == null)
+            {
+                return NotFound();
+            }
+
+            var thanhToan = await _context.ThanhToan
+                .Include(t => t.DonHang)
+                .Include(t => t.LoaiPhuongThucThanhToan)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (thanhToan == null)
+            {
+                return NotFound();
+            }
+
+            var ChiTietDonHang = await _context.ChiTietDonHang
+                                .Where(model => model.IDDonHang == thanhToan.DonHangId)
+                                .Include(mode => mode.Book)
+                                .ToListAsync();
+
+
+            ViewBag.gioHangitem = ChiTietDonHang;
+            ViewBag.thanhToan = thanhToan;
+            ViewData["PhuongThucThanhToanId"] = new SelectList(_context.LoaiPhuongThucThanhToan, "Id", "TenPhuongThucThanhToan", thanhToan.PhuongThucThanhToanId);
+            return View(thanhToan);
+        }
+
+        // POST: ThanhToan2
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ThanhToan([Bind("THANHTOANID")]int ThanhToanId, [Bind("PhuongThucThanhToanId")] int PhuongThucThanhToanId)
+        {
+
+            var UserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+
+            // Tìm đối tượng thanh toán
+            var ThanhToan = await _context.ThanhToan
+                .Include(t => t.DonHang)
+                .Include(t => t.LoaiPhuongThucThanhToan)
+                .FirstOrDefaultAsync(m => m.Id == ThanhToanId);
+
+            var PhuongThucThanhToan = await _context.LoaiPhuongThucThanhToan
+                                                .Where(model => model.Id == PhuongThucThanhToanId)
+                                                .FirstOrDefaultAsync();
+            // Kiểm tra nếu thanhToan null
+            if (ThanhToan == null)
+            {
+                _logger.LogError($"Thanh toán  Id {ThanhToanId} không tìm thấy.");
+                return NotFound("Không tìm thấy thông tin thanh toán.");
+            }
+
+
+            TempData["CreateStatus"] = true;
+
+            ThanhToan.PhuongThucThanhToanId = PhuongThucThanhToan.Id;
+
+            ThanhToan.Total = ThanhToan.Total * (1 - PhuongThucThanhToan.KhuyenMai);
+
+            ThanhToan.Status = true;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index2", new { userId = UserId });
+        }
+
+
     }
 }

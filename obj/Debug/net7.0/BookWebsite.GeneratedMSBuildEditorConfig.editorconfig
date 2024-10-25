@@ -220,26 +220,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpVGlldERvbkhhbmdzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/DanhGias/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/DanhGias/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/DanhGias/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/DanhGias/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/DanhGias/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/DonHangs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uSGFuZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -370,6 +350,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/ThanhToans/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhhbmhUb2Fuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/ThanhToans/Index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhhbmhUb2Fuc1xJbmRleDIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/ThanhToans/ThanhToan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhhbmhUb2Fuc1xUaGFuaFRvYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.NET/DO AN QLDAPM/BookWebsite/DoAnQuanLyDuAnPM/Views/TheLoais/Create.cshtml]

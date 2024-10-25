@@ -84,7 +84,7 @@
                                 }
                                 else
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="GioHangs" asp-action="GetUserCart">Gio Hang</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="GioHangs" asp-action="GetUserCart">Giỏ Hàng Của Bạn</a>
                                 }
                             }
                         </li>
@@ -101,6 +101,7 @@
                             }
                            
                         </li>
+
                         <li class="nav-item">
                             @if (User.Identity.IsAuthenticated)
                             {
@@ -108,8 +109,13 @@
                                 {
                                     <a class="nav-link text-dark" asp-area="" asp-controller="ThanhToans" asp-action="Index">Thanh Toan</a>
                                 }
+                                else
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ThanhToans" asp-action="GetUserWallet">Thanh Toán</a>
+                                }
 
                             }
+                            
                            
                         </li>
                         <li class="nav-item">
@@ -120,7 +126,19 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="DanhGias" asp-action="Index">Danh Gia</a>
                                 }
 
-                            }                                                                            
+                            } 
+                        </li>
+
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ChiTietDonHangs" asp-action="Index">Chi Tiet Do Hang</a>
+                                }
+
+                            }
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
 

@@ -258,7 +258,7 @@ namespace BookWebsite.Controllers
         }
 
 
-        // GET: GioHangItems/Edit/5
+        // GET: GioHangItems/Edit2/5
         public async Task<IActionResult> Edit2(int? id)
         {
             if (id == null || _context.GioHangItem == null)
@@ -267,16 +267,20 @@ namespace BookWebsite.Controllers
             }
 
             var gioHangItem = await _context.GioHangItem.FindAsync(id);
+
             if (gioHangItem == null)
             {
                 return NotFound();
             }
-            ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", gioHangItem.BookId);
-            ViewData["GioHangId"] = new SelectList(_context.GioHang, "Id", "IDNguoiDung", gioHangItem.GioHangId);
+
+            ViewBag.Book = await _context.Book.FindAsync(gioHangItem.BookId);
+
+            ViewBag.GioHangId = gioHangItem.GioHangId;
+
             return View(gioHangItem);
         }
 
-        // POST: GioHangItems/Edit/5
+        // POST: GioHangItems/Edit2/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -288,11 +292,33 @@ namespace BookWebsite.Controllers
                 return NotFound();
             }
 
+            var GioHang = await _context.GioHang.FindAsync(gioHangItem.GioHangId);
+
             if (ModelState.IsValid)
             {
                 try
                 {
+
                     _context.Update(gioHangItem);
+
+                    await _context.SaveChangesAsync();
+
+                    decimal TongTien = 0;
+
+                    foreach (var a in await _context.GioHangItem
+                               .Where(model => model.GioHangId == GioHang.Id)
+                               .Include(item => item.Book) // Nạp đối tượng Book cùng với GioHangItem
+                               .ToListAsync())
+                    {
+                        if (a.Book != null) // Kiểm tra nếu Book không null
+                        {
+                            TongTien += a.SoLuong * a.Book.Gia;
+                        }
+                    }
+
+
+                    GioHang.TongTien = TongTien;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -306,11 +332,16 @@ namespace BookWebsite.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details","GioHangs",new {id = GioHang.Id});
             }
-            ViewData["BookId"] = new SelectList(_context.Book, "Id", "NXB", gioHangItem.BookId);
-            ViewData["GioHangId"] = new SelectList(_context.GioHang, "Id", "IDNguoiDung", gioHangItem.GioHangId);
-            return View(gioHangItem);
+
+            var GioHangItem = await _context.GioHangItem.FindAsync(id);
+
+            ViewBag.Book = await _context.Book.FindAsync(gioHangItem.BookId);
+
+            ViewBag.GioHangId = GioHangItem.GioHangId;
+
+            return View(GioHangItem);
         }
 
         // GET: GioHangItems/Delete/5
